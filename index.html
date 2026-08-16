@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aditya Adhikari</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta name="description" content="Aditya Adhikari — computer science sophomore at South Asian University with a keen interest in cybersecurity.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="shell" class="shell">
+  <div class="titlebar">
+    <div class="dots"><span></span><span></span><span></span></div>
+    <div class="titlebar-name" id="titlebar-name">aditya@adhikari: ~ — bash</div>
+    <button class="ghost-btn" id="to-normal">normal view</button>
+  </div>
+  <div class="screen" id="screen">
+    <div id="output"></div>
+    <div class="inputline">
+      <span class="prompt" id="prompt"></span>
+      <input id="cmdline" type="text" spellcheck="false" autocomplete="off" autocapitalize="off" aria-label="terminal input">
+    </div>
+  </div>
+</div>
+
+<div id="site" class="site" hidden>
+  <header class="site-header">
+    <a class="wordmark" href="#top">aditya<span>.</span>adhikari</a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#skills">Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="blogs.html">Blogs</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="term-btn" id="to-shell">$ terminal</button>
+  </header>
+
+  <main id="top">
+    <section id="about" class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow" id="hero-tagline"></p>
+        <h1 id="hero-name"></h1>
+        <p class="lede" id="hero-bio"></p>
+        <div class="cta-row">
+          <a class="btn primary" href="#contact">Get in touch</a>
+          <a class="btn" id="hero-resume" download>Download résumé</a>
+        </div>
+      </div>
+      <div class="portrait" id="portrait"></div>
+    </section>
+
+    <section id="education"><h2>Education</h2><div class="stack" id="education-list"></div></section>
+    <section id="experience"><h2>Experience</h2><div class="stack" id="experience-list"></div></section>
+    <section id="certifications"><h2>Certifications</h2><div class="grid" id="certifications-list"></div></section>
+    <section id="skills"><h2>Skills</h2><div class="skills" id="skills-list"></div></section>
+    <section id="projects">
+      <div class="sec-head">
+        <h2>Projects</h2>
+        <a class="sec-more" href="projects.html">all projects &rarr;</a>
+      </div>
+      <div class="grid" id="projects-list"></div>
+    </section>
+    <section id="blogs">
+      <div class="sec-head">
+        <h2>Blogs &amp; CTF writeups</h2>
+        <a class="sec-more" href="blogs.html">all writeups &rarr;</a>
+      </div>
+      <div class="rows" id="blogs-list"></div>
+    </section>
+    <section id="contact">
+      <h2>Get in touch</h2>
+      <div class="contact-split">
+        <form class="msg-form" id="contact-form" novalidate>
+          <p class="form-lede">A question, an opportunity, or just want to say hi? Write it here and it lands straight in my inbox.</p>
+          <div class="field-row">
+            <label class="field">
+              <span class="flabel">name</span>
+              <input type="text" name="name" autocomplete="name" placeholder="your name" required>
+            </label>
+            <label class="field">
+              <span class="flabel">email</span>
+              <input type="email" name="email" autocomplete="email" placeholder="you@example.com" required>
+            </label>
+          </div>
+          <label class="field">
+            <span class="flabel">message</span>
+            <textarea name="message" rows="7" placeholder="Type your message&hellip;" required></textarea>
+          </label>
+          <input class="honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="form-foot">
+            <button class="btn primary" type="submit" id="send-btn">Send message</button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+        <div class="contact-aside">
+          <p class="aside-note">Or reach me directly:</p>
+          <div class="contact-list" id="contact-list"></div>
+          <p class="aside-note tip">Prefer the shell? Run <code>mail</code> in the terminal view.</p>
+        </div>
+      </div>
+      <footer>
+        <span>&copy; <span id="year"></span> Aditya Adhikari</span>
+        <span>Extremely tired</span>
+      </footer>
+    </section>
+  </main>
+</div>
+
+<script src="js/content.js"></script>
+<script src="js/markdown.js"></script>
+<script src="js/mailer.js"></script>
+<script src="js/site.js"></script>
+<script src="js/terminal.js"></script>
+</body>
+</html>
