@@ -11,6 +11,7 @@
       .replace(/~~([^~]+)~~/g, '<del>$1</del>');
   }
 
+  /* Front matter: leading --- block of key: value lines */
   function frontMatter(src) {
     const m = src.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/);
     if (!m) return { meta: {}, body: src };

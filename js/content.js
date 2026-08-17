@@ -1,7 +1,7 @@
 const PROFILE = {
   name: "Hi, I'm Aditya.",
   tagline: "Trying my best (to survive)",
-  bio: "Current junior at South Asian University with a keen interest in cybersecurity. Follow me on my journey.",
+  bio: "Current sophomore at South Asian University with a keen interest in cybersecurity. Follow me on my journey.",
   photo: "assets/profile.jpg", 
   resume: "assets/resume.pdf",     
   promptHost: "aditya@adhikari"
@@ -71,3 +71,6 @@ const CONTACT_FORM = {
   fallback: "adityaadhikari03@gmail.com",
   subject:  "New message from adhikariaditya.github.io"
 };
+
+function onWeb(list)  { return (list || []).filter(x => !x.show || x.show === 'both' || x.show === 'web'); }
+function onTerm(list) { return (list || []).filter(x => !x.show || x.show === 'both' || x.show === 'term'); }

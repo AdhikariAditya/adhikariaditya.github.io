@@ -28,17 +28,17 @@
       (it.desc ? '<p>' + esc(it.desc) + '</p>' : '')));
   });
 
-  timeline(EDUCATION, $('education-list'));
-  timeline(EXPERIENCE, $('experience-list'));
+  timeline(onWeb(EDUCATION), $('education-list'));
+  timeline(onWeb(EXPERIENCE), $('experience-list'));
 
-  CERTIFICATIONS.forEach(c => {
+  onWeb(CERTIFICATIONS).forEach(c => {
     $('certifications-list').appendChild(el('div', 'card',
       '<h3>' + esc(c.title) + '</h3>' +
       '<div class="period">' + esc(c.org) + (c.period ? ' · ' + esc(c.period) : '') + '</div>' +
       (c.desc ? '<p>' + esc(c.desc) + '</p>' : '')));
   });
 
-  SKILLS.forEach(g => {
+  onWeb(SKILLS).forEach(g => {
     const box = el('div');
     box.appendChild(el('div', 'label', esc(g.label) + '/'));
     box.appendChild(el('div', 'chips', g.items.map(i => '<span>' + esc(i) + '</span>').join('')));
@@ -47,14 +47,14 @@
 
   const HOME_PROJECTS = 3, HOME_BLOGS = 5;
 
-  PROJECTS.slice(0, HOME_PROJECTS).forEach(p => {
+  onWeb(PROJECTS).slice(0, HOME_PROJECTS).forEach(p => {
     $('projects-list').appendChild(el('div', 'card',
       '<h3>' + esc(p.title) + '</h3>' +
       (p.desc ? '<p>' + esc(p.desc) + '</p>' : '') +
       (p.href ? '<a class="repo" href="' + esc(p.href) + '" target="_blank" rel="noopener noreferrer">' + esc(p.hrefLabel || p.href) + ' →</a>' : '')));
   });
 
-  BLOGS.slice(0, HOME_BLOGS).forEach(b => {
+  onWeb(BLOGS).slice(0, HOME_BLOGS).forEach(b => {
     const a = el('a', 'row',
       '<span class="date">' + esc(b.date) + '</span>' +
       '<span class="title">' + esc(b.title) + '</span>' +
@@ -64,7 +64,7 @@
     $('blogs-list').appendChild(a);
   });
 
-  CONTACT.forEach(c => {
+  onWeb(CONTACT).forEach(c => {
     const a = el('a', 'contact-card',
       '<div class="label">' + esc(c.label) + '</div><div class="value">' + esc(c.value) + '</div>');
     a.href = c.href;
@@ -72,7 +72,6 @@
     $('contact-list').appendChild(a);
   });
 
-  /* get in touch — posts the message to my inbox, no page reload */
   const form = $('contact-form');
   if (form) {
     const status = $('form-status'), btn = $('send-btn');

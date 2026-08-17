@@ -80,21 +80,21 @@
     switch (key) {
       case 'help': return p('Available commands:') + helpTable(HELP_ROWS);
       case 'whoami': return about();
-      case 'education': return head('EDUCATION') + items(EDUCATION.map(timeRow));
-      case 'experience': return head('EXPERIENCE') + items(EXPERIENCE.map(timeRow));
-      case 'certifications': return head('./certifications') + items(CERTIFICATIONS.map(timeRow));
-      case 'skills': return head('skills.txt') + tagGroups(SKILLS);
-      case 'blogs': return head('./blogs/') + items(BLOGS.map(b => ({
+      case 'education': return head('EDUCATION') + items(onTerm(EDUCATION).map(timeRow));
+      case 'experience': return head('EXPERIENCE') + items(onTerm(EXPERIENCE).map(timeRow));
+      case 'certifications': return head('./certifications') + items(onTerm(CERTIFICATIONS).map(timeRow));
+      case 'skills': return head('skills.txt') + tagGroups(onTerm(SKILLS));
+      case 'blogs': return head('./blogs/') + items(onTerm(BLOGS).map(b => ({
         label: (b.slug ? b.slug + '.md' : b.title), meta: [b.date, b.tag].filter(Boolean).join(' · '),
         desc: b.slug ? b.title : '',
         href: b.slug ? 'post.html?p=' + encodeURIComponent(b.slug) : (b.href && b.href !== '#' ? b.href : ''),
         hrefLabel: 'read', perm: '-rw-r--r--'
       }))) + p('') + p("read one without leaving the shell:  cat blogs/<name>") +
         '<a class="t-link" href="blogs.html">→ browse every writeup on one page</a>';
-      case 'projects': return head('./projects/') + items(PROJECTS.map(pr => ({
+      case 'projects': return head('./projects/') + items(onTerm(PROJECTS).map(pr => ({
         label: pr.title, desc: pr.desc, href: pr.href, hrefLabel: pr.hrefLabel || pr.href
       }))) + p('') + '<a class="t-link" href="projects.html">→ browse every project on one page</a>';
-      case 'contact': return head('running contact.sh') + items(CONTACT.map(c => ({
+      case 'contact': return head('running contact.sh') + items(onTerm(CONTACT).map(c => ({
         label: c.label, meta: c.value, href: c.href, hrefLabel: 'open', perm: '-rwxr-xr-x'
       }))) + p('') + p("or run 'mail' to write me a message without leaving the shell");
       case 'resume': return p('Preparing ' + PROFILE.resume + ' ... done.') +
@@ -273,9 +273,10 @@
     const typed = input.value.replace(/^\s+/, '');
     if (!typed) { write(helpTable(HELP_ROWS), ''); return; }
 
+    /* path completion inside blogs/ — e.g. `cat blogs/pic<Tab>` */
     const pathM = typed.match(/^((?:cat|less|more|read)\s+)(\.?\/?blogs\/)(\S*)$/i);
     if (pathM) {
-      const files = BLOGS.filter(b => b.slug).map(b => b.slug + '.md');
+      const files = onTerm(BLOGS).filter(b => b.slug).map(b => b.slug + '.md');
       const partial = pathM[3];
       const hits = files.filter(f => f.toLowerCase().startsWith(partial.toLowerCase()));
       if (!hits.length) return;
