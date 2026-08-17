@@ -86,6 +86,8 @@ This includes the bio, education, experience, certifications, skills, projects, 
 
 Both the terminal and normal versions use the same content, so you don't have to update the same information twice.
 
+You can add `show: ` to any entry and change if it shows just on terminal, just on the website or both. 
+
 Add your own files to the `assets/` folder:
 
 ```text
