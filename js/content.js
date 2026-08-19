@@ -51,7 +51,7 @@ const SKILLS = [
 ];
 
 const PROJECTS = [
-  { title: "Under Construction", desc: "Updates Coming Soon", href: "https://github.com/adhikariaditya", hrefLabel: "GitHub Soon" },
+  { title: "SOC Home Lab", desc: "Wazuh SIEM for a Windows endpoint", href: "https://github.com/AdhikariAditya/SOC-Home-Lab", hrefLabel: "GitHub" },
   { title: "Under Construction", desc: "Updates Coming Soon", href: "https://github.com/adhikariaditya", hrefLabel: "GitHub Soon" },
   { title: "Under Construction", desc: "Updates Coming Soon", href: "https://github.com/adhikariaditya", hrefLabel: "GitHub Soon" }
 ];
