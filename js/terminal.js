@@ -97,8 +97,8 @@
       case 'contact': return head('running contact.sh') + items(onTerm(CONTACT).map(c => ({
         label: c.label, meta: c.value, href: c.href, hrefLabel: 'open', perm: '-rwxr-xr-x'
       }))) + p('') + p("or run 'mail' to write me a message without leaving the shell");
-      case 'resume': return p('Preparing ' + PROFILE.resume + ' ... done.') +
-        '<a class="t-action" href="' + esc(PROFILE.resume) + '" download>↓ download resume</a>';
+      case 'resume': return p('Opening ' + PROFILE.resume + ' ... done.') +
+        '<a class="t-action" href="' + esc(PROFILE.resume) + '" target="_blank" rel="noopener">↗ open resume</a>';
       case 'ls': return '<div class="t-p">blogs/<br>projects/<br>skills.txt<br>contact.sh<br>message.sh<br>download_resume.sh<br>Aditya_Adhikari</div>';
       case 'pwd': return p('/home/aditya');
       case 'sudo': return err('aditya is not in the sudoers file. This incident will be reported.');
