@@ -48,7 +48,7 @@
     { cmd: 'grep "experience" Aditya_Adhikari', desc: 'roles, experience and internships' },
     { cmd: 'mail', desc: 'write me a message — sent straight to my inbox' },
     { cmd: 'wget contact.sh', desc: 'email, LinkedIn, GitHub' },
-    { cmd: 'curl download_resume.sh', desc: 'download my resume' },
+    { cmd: 'curl download_resume.sh', desc: 'open my resume in a new tab' },
     { cmd: 'clear', desc: 'clear the screen' },
     { cmd: 'normal', desc: 'switch to the normal viewing experience' }
   ];
