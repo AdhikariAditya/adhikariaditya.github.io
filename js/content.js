@@ -57,7 +57,7 @@ const PROJECTS = [
 ];
 
 const BLOGS = [
-  { date: "16-10-2026", title: "CTF: Pickle Rick", tag: "ctf", slug: "pickle-rick" }
+  { date: "16-09-2026", title: "CTF: Pickle Rick", tag: "ctf", slug: "pickle-rick" }
 ];
 
 const CONTACT = [
