@@ -44,15 +44,15 @@ const CERTIFICATIONS = [
 ];
 
 const SKILLS = [
-  { label: "languages", items: ["Python", "C", "Bash", "Java"] },
+  { label: "languages", items: ["Python", "C", "Bash", "SQL"] },
   { label: "tools",     items: ["Linux", "Wireshark", "Burp Suite", "Git", "Metasploit"] },
-  { label: "security",  items: ["Web exploitation", "Cryptography", "Penetration Testing"] },
+  { label: "security",  items: ["Web exploitation", "Cryptography", "Penetration Testing", "Network Security"] },
   { label: "spoken",    items: ["English", "Nepali", "Hindi", "German"] }
 ];
 
 const PROJECTS = [
   { title: "SOC Home Lab", desc: "Wazuh SIEM for a Windows endpoint", href: "https://github.com/AdhikariAditya/SOC-Home-Lab", hrefLabel: "GitHub" },
-  { title: "Under Construction", desc: "Updates Coming Soon", href: "https://github.com/adhikariaditya", hrefLabel: "GitHub Soon" },
+  { title: "File Integrity Manager", desc: "FIM built using hashlib, pathlib, argparse, json and sys in Python", href: "https://github.com/AdhikariAditya/FileIntegrityManager", hrefLabel: "GitHub" },
   { title: "Under Construction", desc: "Updates Coming Soon", href: "https://github.com/adhikariaditya", hrefLabel: "GitHub Soon" }
 ];
 
