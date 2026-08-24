@@ -17,7 +17,7 @@ a:hover{color:#a7f3c6;text-decoration:underline}
 
 .shell{height:100vh;display:flex;flex-direction:column;font-family:var(--mono)}
 .titlebar{display:flex;align-items:center;gap:10px;padding:10px 14px;background:#111614;border-bottom:1px solid #1d2724;flex:0 0 auto}
-.dots{display:flex;gap:7px}
+.dots{display:flex;gap:7px;flex:0 0 auto}
 .dots span{width:11px;height:11px;border-radius:50%;background:#3a4441}
 .titlebar-name{flex:1;text-align:center;font-size:12px;color:var(--dim);letter-spacing:.04em}
 .ghost-btn{background:transparent;border:1px solid #26332e;color:#7f918a;font:inherit;font-size:11px;padding:4px 10px;border-radius:5px;cursor:pointer}
@@ -198,4 +198,9 @@ body.reading{background:var(--bg)}
 @media (max-width:640px){
   .site-header nav{order:3;width:100%;margin-left:0;gap:14px}
   .portrait{width:100%;height:280px}
+}
+@media (max-width:520px){
+  .titlebar{padding:8px 10px;gap:8px}
+  .titlebar-name{display:none}
+  .ghost-btn{margin-left:auto;white-space:nowrap}
 }
