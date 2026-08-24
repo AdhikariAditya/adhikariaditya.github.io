@@ -62,7 +62,7 @@ const BLOGS = [
 
 const CONTACT = [
   { label: "email",    value: "adityaadhikari03@gmail.com",      href: "mailto:adityaadhikari03@gmail.com" },
-  { label: "linkedin", value: "in/aditya-adhikari-08907b23b",    href: "https://www.linkedin.com/in/aditya-adhikari-08907b23b/" },
+  { label: "linkedin", value: "in/adhikari-aditya/",    href: "https://www.linkedin.com/in/adhikari-aditya/" },
   { label: "github",   value: "@adhikariaditya",                 href: "https://github.com/adhikariaditya" }
 ];
 
