@@ -65,7 +65,7 @@ const PROJECTS = [
     desc: "Tool to monitor any changes in files you have",
     href: "https://github.com/AdhikariAditya/FileIntegrityManager",
     hrefLabel: "View GitHub",
-    learned: ["Python", "hashlib", "pathlib", "argparse", "json"]
+    learned: ["Python", "hashlib", "pathlib", "argparse", "json", "sys"]
   },
   {
     title: "Under Construction",
