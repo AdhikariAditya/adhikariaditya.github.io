@@ -72,7 +72,6 @@
     $('contact-list').appendChild(a);
   });
 
-  /* get in touch — posts the message to my inbox, no page reload */
   const form = $('contact-form');
   if (form) {
     const status = $('form-status'), btn = $('send-btn');

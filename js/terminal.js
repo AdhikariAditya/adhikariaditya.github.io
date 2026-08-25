@@ -186,8 +186,6 @@
       });
   }
 
-  /* ---------- mail: compose a message and send it to my inbox ---------- */
-
   const inbox = () => 'my inbox';
 
   function startMail(raw) {
@@ -273,7 +271,6 @@
     const typed = input.value.replace(/^\s+/, '');
     if (!typed) { write(helpTable(HELP_ROWS), ''); return; }
 
-    /* path completion inside blogs/ — e.g. `cat blogs/pic<Tab>` */
     const pathM = typed.match(/^((?:cat|less|more|read)\s+)(\.?\/?blogs\/)(\S*)$/i);
     if (pathM) {
       const files = onTerm(BLOGS).filter(b => b.slug).map(b => b.slug + '.md');

@@ -153,5 +153,5 @@ It also supports:
 
 - [x] As my writeups and projects increase in volume I need to dedicate 2 separate pages to projects and writeups
 - [ ] Get a better profile picture
-- [ ] Replace the placeholder projects and certificates with real ones
-- [x] Add `assets/resume.pdf`
+- [ ] Replace the placeholder projects with real ones
+- [ ] Add `assets/resume.pdf`

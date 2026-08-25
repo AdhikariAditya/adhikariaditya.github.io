@@ -65,32 +65,10 @@ const CONTACT = [
   { label: "github",   value: "@adhikariaditya",                 href: "https://github.com/adhikariaditya" }
 ];
 
-/* Where the "get in touch" form delivers.
-   This uses FormSubmit's RANDOM ALIAS so no email address appears in this repo.
-   To get an alias: log in at formsubmit.co with your address, copy the random
-   string it gives you (looks like "a1b2c3d4e5f6..."), and paste it below.
-   Messages route to your inbox; visitors and scrapers never see the address. */
 const CONTACT_FORM = {
-  endpoint: "https://formsubmit.co/ajax/liloja",
+  endpoint: "https://formsubmit.co/el/liloja",
   subject:  "New message from adhikariaditya.github.io"
 };
 
-/* ---------------------------------------------------------------
-   WHERE DOES AN ENTRY SHOW UP?
-
-   Every item in any list above may carry an optional "show" field:
-
-     show: "both"   (or leave it out)  -> website AND terminal
-     show: "web"                       -> website pages only
-     show: "term"                      -> terminal only
-
-   Example:
-     { title: "Secret tool", desc: "shell folks only", show: "term" }
-     { date: "01-01-2026", title: "Long essay", slug: "essay", show: "web" }
-
-   Works on PROJECTS, BLOGS, CONTACT, EDUCATION, EXPERIENCE,
-   CERTIFICATIONS and SKILLS. Hiding a blog post only removes it from
-   the listing — a direct link to post.html?p=slug still opens it.
-   --------------------------------------------------------------- */
 function onWeb(list)  { return (list || []).filter(x => !x.show || x.show === 'both' || x.show === 'web'); }
 function onTerm(list) { return (list || []).filter(x => !x.show || x.show === 'both' || x.show === 'term'); }
