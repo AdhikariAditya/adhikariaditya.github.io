@@ -19,7 +19,7 @@ js/terminal.js    Handles the interactive terminal
 js/mailer.js      Delivers messages from the contact form to my inbox
 js/markdown.js    Small Markdown renderer for blog posts
 posts/*.md        Blog posts and CTF writeups
-assets/           Profile picture and resume
+assets/           Profile picture, resume, and favicon
 ```
 
 The home page shows a short preview of the projects and posts (3 and 5 by
@@ -86,37 +86,58 @@ This includes the bio, education, experience, certifications, skills, projects, 
 
 Both the terminal and normal versions use the same content, so you don't have to update the same information twice.
 
+Any entry can carry an optional `show` field to limit where it appears:
+
+```js
+{ title: "Shell only", desc: "hidden from the website", show: "term" }
+{ title: "Website only", desc: "hidden from the terminal", show: "web" }
+```
+
+Leave it out (or use `"both"`) and the entry appears in both. Hiding a blog post
+only removes it from the listings — `post.html?p=slug` still opens it, which is
+useful for unlisted drafts.
+
+Experience and project entries can also carry a `learned` array, rendered as a
+"skills gained/" row at the bottom of the card:
+
+```js
+learned: ["Python", "hashlib", "pathlib"]
+```
+
+Omit it or leave it empty and nothing renders.
+
 Add your own files to the `assets/` folder:
 
 ```text
 assets/profile.jpg
 assets/resume.pdf
-assets/favicon.svg
+assets/favicon.png
 ```
+
+The favicon is inlined as a data URI in each page's `<head>`, so there is no
+icon file to fetch. `favicon.ico` at the root and `assets/favicon.png` cover
+bookmark bars, link previewers, and phone home screens.
 
 ## The contact form
 
 The "Get in touch" section on the home page lets anyone type a message that is
 emailed to me. GitHub Pages cannot send email on its own, so the form hands the
-message to [FormSubmit](https://formsubmit.co). Use its **random alias** so no
-email address is ever committed to this repo.
-
-**One-time setup:** log in at formsubmit.co with your address, copy the random
-alias string it issues, and paste it into `CONTACT_FORM.endpoint`. Send a test
-message and click the activation link FormSubmit emails you.
+message to [Formspree](https://formspree.io). The endpoint is an opaque form ID,
+so no email address is committed to this repo.
 
 The endpoint lives in `js/content.js`:
 
 ```js
 const CONTACT_FORM = {
-  endpoint: "https://formsubmit.co/ajax/liloja",
+  endpoint: "https://formspree.io/f/mjybqazj",
   subject:  "New message from adhikariaditya.github.io"
 };
 ```
 
-Swapping in a different service (Formspree, Getform, a worker of your own) is
-just a matter of changing `endpoint` — anything that accepts a JSON `POST` of
-`{ name, email, message }` will work.
+Formspree's dashboard logs every submission, and its API returns real errors, so
+a failed send reports the reason instead of failing silently. Swapping in a
+different service is just a matter of changing `endpoint` — anything that accepts
+a JSON `POST` of `{ name, email, message }` will work.
 
 The same message can be sent from inside the terminal with `mail`, which walks
 through name, reply address, and body (finish the body with a single `.` on its
@@ -153,5 +174,7 @@ It also supports:
 
 - [x] As my writeups and projects increase in volume I need to dedicate 2 separate pages to projects and writeups
 - [ ] Get a better profile picture
-- [ ] Replace the placeholder projects with real ones
-- [ ] Add `assets/resume.pdf`
+- [x] Replace the placeholder projects with real ones
+- [x] Add `assets/resume.pdf`
+- [ ] Point the project links at their own repos instead of the profile page
+- [ ] Add website analytics
