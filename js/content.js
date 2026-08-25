@@ -66,7 +66,7 @@ const CONTACT = [
 ];
 
 const CONTACT_FORM = {
-  endpoint: "https://formsubmit.co/el/liloja",
+  endpoint: "https://formspree.io/f/mjybqazj",
   subject:  "New message from adhikariaditya.github.io"
 };
 
