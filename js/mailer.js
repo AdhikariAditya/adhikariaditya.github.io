@@ -1,3 +1,6 @@
+/* Delivers a message from the site to my inbox.
+   Shared by the normal-view form (js/site.js) and the shell's `mail` command
+   (js/terminal.js). Configure the endpoint in js/content.js -> CONTACT_FORM. */
 (function () {
   window.sendMessage = function (msg) {
     var cfg = (typeof CONTACT_FORM === 'object' && CONTACT_FORM) || {};

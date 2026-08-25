@@ -72,6 +72,7 @@
     $('contact-list').appendChild(a);
   });
 
+  /* get in touch — posts the message to my inbox, no page reload */
   const form = $('contact-form');
   if (form) {
     const status = $('form-status'), btn = $('send-btn');
@@ -89,7 +90,7 @@
       say('Sending\u2026');
       window.sendMessage({ name: name, email: email, message: message })
         .then(() => { form.reset(); say('Message sent \u2014 thanks, ' + name + '. I\u2019ll get back to you.', 'ok'); })
-        .catch(() => say('Could not send right now. Email me directly at ' + CONTACT_FORM.fallback + '.', 'err'))
+        .catch(() => say('Could not send right now \u2014 please try again in a moment.', 'err'))
         .then(() => { btn.disabled = false; });
     });
   }

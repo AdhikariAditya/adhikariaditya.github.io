@@ -1,3 +1,4 @@
+/* Renders the dedicated projects.html and blogs.html pages from js/content.js */
 (function () {
   const $ = (id) => document.getElementById(id);
   const el = (tag, cls, html) => {
@@ -11,6 +12,7 @@
   const yearEl = $('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  /* accepts "2026-08-10" and "10-08-2026" */
   const toTime = (d) => {
     const s = String(d || '');
     let m = s.match(/^(\d{4})-(\d{1,2})-(\d{1,2})/);
@@ -21,6 +23,7 @@
   };
   const yearOf = (d) => { const m = String(d || '').match(/\d{4}/); return m ? m[0] : 'undated'; };
 
+  /* ---------- projects ---------- */
   const pMount = $('projects-list');
   if (pMount) {
     const list = onWeb(PROJECTS);
@@ -37,6 +40,7 @@
     });
   }
 
+  /* ---------- blogs ---------- */
   const bMount = $('blogs-list');
   if (bMount) {
     const posts = onWeb(BLOGS).slice().sort((a, b) => toTime(b.date) - toTime(a.date));

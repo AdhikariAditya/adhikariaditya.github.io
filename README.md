@@ -86,8 +86,6 @@ This includes the bio, education, experience, certifications, skills, projects, 
 
 Both the terminal and normal versions use the same content, so you don't have to update the same information twice.
 
-You can add `show: ` to any entry and change if it shows just on terminal, just on the website or both. 
-
 Add your own files to the `assets/` folder:
 
 ```text
@@ -100,21 +98,25 @@ assets/favicon.svg
 
 The "Get in touch" section on the home page lets anyone type a message that is
 emailed to me. GitHub Pages cannot send email on its own, so the form hands the
-message to [FormSubmit](https://formsubmit.co), which needs no account.
+message to [FormSubmit](https://formsubmit.co). Use its **random alias** so no
+email address is ever committed to this repo.
 
-**One-time setup:** send yourself a test message from the live site. FormSubmit
-replies with an activation email — click the link in it once, and every message
-after that arrives in the inbox automatically.
+**One-time setup:** log in at formsubmit.co with your address, copy the random
+alias string it issues, and paste it into `CONTACT_FORM.endpoint`. Send a test
+message and click the activation link FormSubmit emails you.
 
 The endpoint lives in `js/content.js`:
 
 ```js
 const CONTACT_FORM = {
-  endpoint: "https://formsubmit.co/ajax/adityaadhikari03@gmail.com",
-  fallback: "adityaadhikari03@gmail.com",
+  endpoint: "https://formsubmit.co/ajax/liloja",
   subject:  "New message from adhikariaditya.github.io"
 };
 ```
+
+Swapping in a different service (Formspree, Getform, a worker of your own) is
+just a matter of changing `endpoint` — anything that accepts a JSON `POST` of
+`{ name, email, message }` will work.
 
 The same message can be sent from inside the terminal with `mail`, which walks
 through name, reply address, and body (finish the body with a single `.` on its
@@ -149,6 +151,7 @@ It also supports:
 
 ## To-do list
 
+- [x] As my writeups and projects increase in volume I need to dedicate 2 separate pages to projects and writeups
 - [ ] Get a better profile picture
 - [ ] Replace the placeholder projects with real ones
 - [ ] Add `assets/resume.pdf`

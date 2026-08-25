@@ -47,7 +47,7 @@
     { cmd: 'ls projects/', desc: 'projects, with links to GitHub' },
     { cmd: 'grep "experience" Aditya_Adhikari', desc: 'roles, experience and internships' },
     { cmd: 'mail', desc: 'write me a message — sent straight to my inbox' },
-    { cmd: 'wget contact.sh', desc: 'email, LinkedIn, GitHub' },
+    { cmd: 'wget contact.sh', desc: 'LinkedIn, GitHub' },
     { cmd: 'curl download_resume.sh', desc: 'open my resume in a new tab' },
     { cmd: 'clear', desc: 'clear the screen' },
     { cmd: 'normal', desc: 'switch to the normal viewing experience' }
@@ -186,13 +186,14 @@
       });
   }
 
-  const inbox = () => ((CONTACT.find(c => c.label === 'email') || {}).value ||
-    (typeof CONTACT_FORM === 'object' && CONTACT_FORM.fallback) || 'my inbox');
+  /* ---------- mail: compose a message and send it to my inbox ---------- */
+
+  const inbox = () => 'my inbox';
 
   function startMail(raw) {
     mail = { step: 'name', ps: 'name>', name: '', email: '', lines: [] };
     write(head('mail — compose a message') +
-      p('Whatever you write is delivered straight to ' + inbox() + '.') +
+      p('Whatever you write is delivered straight to my inbox.') +
       p("Type 'cancel' on its own line at any point to abort.") + p('') +
       p('Who are you?'), raw);
     setPrompt();
@@ -246,7 +247,7 @@
 
   function sendMail(raw, msg) {
     const name = msg.name;
-    write(p('sending — ' + msg.message.split('\n').length + ' line(s) to ' + inbox() + ' ...'), raw, mail.ps);
+    write(p('sending — ' + msg.message.split('\n').length + ' line(s) ...'), raw, mail.ps);
     const entry = out.lastElementChild;
     const echo = entry.querySelector('.cmdecho').outerHTML;
     endMail();
@@ -262,8 +263,7 @@
       .catch(() => {
         entry.innerHTML = echo +
           err('mail: could not reach the mail relay.') +
-          p('Email me directly instead: ' + inbox()) +
-          '<a class="t-link" href="mailto:' + esc(inbox()) + '">→ open your mail client</a>';
+          p('Try again in a moment, or reach me on LinkedIn — type: wget contact.sh');
         screen.scrollTop = screen.scrollHeight;
       });
   }
