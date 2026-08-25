@@ -67,7 +67,7 @@ const CONTACT = [
 ];
 
 const CONTACT_FORM = {
-  endpoint: "https://formsubmit.co/ajax/adityaadhikari03@gmail.com",
+  endpoint: "https://formsubmit.co/ajax/liloja",
   subject:  "New message from adhikariaditya.github.io"
 };
 
