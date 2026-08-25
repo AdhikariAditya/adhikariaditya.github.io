@@ -98,7 +98,7 @@ assets/favicon.svg
 
 The "Get in touch" section on the home page lets anyone type a message that is
 emailed to me. GitHub Pages cannot send email on its own, so the form hands the
-message to [FormSpree](https://formspree.io). Use its **random alias** so no
+message to [FormSubmit](https://formsubmit.co). Use its **random alias** so no
 email address is ever committed to this repo.
 
 **One-time setup:** log in at formsubmit.co with your address, copy the random
@@ -109,7 +109,7 @@ The endpoint lives in `js/content.js`:
 
 ```js
 const CONTACT_FORM = {
-  endpoint: "https://formspree.io/f/mjybqazj",
+  endpoint: "https://formsubmit.co/ajax/liloja",
   subject:  "New message from adhikariaditya.github.io"
 };
 ```

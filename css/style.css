@@ -188,6 +188,10 @@ body.reading{background:var(--bg)}
 .rows .year-mark:first-child{padding-top:0}
 .empty{font-family:var(--mono);font-size:13.5px;color:var(--dim);padding:10px 4px}
 .chips.small{margin-top:14px}
+.learned{display:flex;flex-direction:column;gap:8px;margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+.learned-label{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:var(--accent-2)}
+.learned .chips.small{margin-top:0}
+.t-tagrow.tight{margin-top:10px}
 .chips.small span{font-size:12px;padding:3px 9px}
 
 @media (max-width:860px){

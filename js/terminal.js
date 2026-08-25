@@ -23,6 +23,7 @@
     '<div class="t-item"><span class="t-perm">' + (r.perm || 'drwxr-xr-x') + '</span><div>' +
     '<div><h4>' + esc(r.label) + '</h4>' + (r.meta ? '<span class="t-meta">' + esc(r.meta) + '</span>' : '') + '</div>' +
     (r.desc ? '<div class="t-desc">' + esc(r.desc) + '</div>' : '') +
+    (r.learned && r.learned.length ? '<div class="t-tagrow tight"><span class="label">gained</span><div class="t-tags">' + r.learned.map(x => '<span>' + esc(x) + '</span>').join('') + '</div></div>' : '') +
     (r.href ? '<a class="t-link" href="' + esc(r.href) + '"' + (/^https?:/.test(r.href) ? ' target="_blank" rel="noopener noreferrer"' : '') + '>→ ' + esc(r.hrefLabel || r.href) + '</a>' : '') +
     '</div></div>').join('') + '</div>';
 
@@ -74,7 +75,7 @@
     [/^exit$|^logout$/, 'exit']
   ];
 
-  const timeRow = (it) => ({ label: it.title, meta: [it.org, it.period].filter(Boolean).join(' · '), desc: it.desc });
+  const timeRow = (it) => ({ label: it.title, meta: [it.org, it.period].filter(Boolean).join(' · '), desc: it.desc, learned: it.learned });
 
   function body(key, raw) {
     switch (key) {
@@ -92,7 +93,7 @@
       }))) + p('') + p("read one without leaving the shell:  cat blogs/<name>") +
         '<a class="t-link" href="blogs.html">→ browse every writeup on one page</a>';
       case 'projects': return head('./projects/') + items(onTerm(PROJECTS).map(pr => ({
-        label: pr.title, desc: pr.desc, href: pr.href, hrefLabel: pr.hrefLabel || pr.href
+        label: pr.title, desc: pr.desc, href: pr.href, hrefLabel: pr.hrefLabel || pr.href, learned: pr.learned
       }))) + p('') + '<a class="t-link" href="projects.html">→ browse every project on one page</a>';
       case 'contact': return head('running contact.sh') + items(onTerm(CONTACT).map(c => ({
         label: c.label, meta: c.value, href: c.href, hrefLabel: 'open', perm: '-rwxr-xr-x'

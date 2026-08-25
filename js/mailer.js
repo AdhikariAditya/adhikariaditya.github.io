@@ -2,12 +2,14 @@
   window.sendMessage = function (msg) {
     var cfg = (typeof CONTACT_FORM === 'object' && CONTACT_FORM) || {};
     if (!cfg.endpoint) return Promise.reject(new Error('no endpoint configured'));
+
     var payload = {
       name: msg.name,
       email: msg.email,
       message: msg.message,
       _subject: cfg.subject || 'New message from my website'
     };
+
     return fetch(cfg.endpoint, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },

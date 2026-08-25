@@ -27,13 +27,15 @@ const EXPERIENCE = [
     title: "Social Media Internship",
     org: "Glimpse Markets",
     period: "Jun 2025 - April 2026",
-    desc: "Uploading engaging viral meme content specifically designed to market and promote Bitcoin"
+    desc: "Uploading engaging viral meme content specifically designed to market and promote Bitcoin",
+    learned: ["Content creation", "Digital marketing", "Social media management", "Copywriting", "Video editing", "Photo editing"]
   },
   {
     title: "Intern",
     org: "Engineering General Consultants (Pvt) Ltd",
     period: "Oct 2023 - November 2023",
-    desc: "Worked directly under professionals to gain insight into engineering"
+    desc: "Worked directly under professionals to gain insight into engineering",
+    learned: ["Technical documentation", "Site observation", "Teamwork", "Professional communication"]
   }
 ];
 
@@ -51,9 +53,27 @@ const SKILLS = [
 ];
 
 const PROJECTS = [
-  { title: "SOC Home Lab - Wazuh SIEM", desc: "Wazuh SIEM for a Windows endpoint", href: "https://github.com/AdhikariAditya/SOC-Home-Lab", hrefLabel: "View GitHub" },
-  { title: "File Integrity Monitor", desc: "Tool to monitor any changes in files you have", href: "https://github.com/AdhikariAditya/FileIntegrityManager", hrefLabel: "View GitHub" },
-  { title: "Under Construction", desc: "Updates Coming Soon", href: "https://github.com/adhikariaditya", hrefLabel: "GitHub Soon" }
+  {
+    title: "SOC Home Lab - Wazuh SIEM",
+    desc: "Wazuh SIEM for a Windows endpoint",
+    href: "https://github.com/adhikariaditya",
+    hrefLabel: "View GitHub",
+    learned: ["Wazuh SIEM", "Sysmon", "Log Analysis", "MITRE ATT&CK", "Windows internals"]
+  },
+  {
+    title: "File Integrity Monitor",
+    desc: "Tool to monitor any changes in files you have",
+    href: "https://github.com/adhikariaditya",
+    hrefLabel: "View GitHub",
+    learned: ["Python", "hashlib", "pathlib", "argparse", "json"]
+  },
+  {
+    title: "Under Construction",
+    desc: "Updates Coming Soon",
+    href: "https://github.com/adhikariaditya",
+    hrefLabel: "GitHub Soon",
+    learned: []
+  }
 ];
 
 const BLOGS = [
@@ -61,7 +81,7 @@ const BLOGS = [
 ];
 
 const CONTACT = [
-  { label: "linkedin", value: "in/aditya-adhikari-08907b23b",    href: "https://www.linkedin.com/in/aditya-adhikari-08907b23b/" },
+  { label: "linkedin", value: "in/adhikari-aditya",              href: "https://www.linkedin.com/in/adhikari-aditya/" },
   { label: "github",   value: "@adhikariaditya",                 href: "https://github.com/adhikariaditya" }
 ];
 

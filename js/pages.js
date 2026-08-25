@@ -33,6 +33,7 @@
         (p.period ? '<div class="period">' + esc(p.period) + '</div>' : '') +
         (p.desc ? '<p>' + esc(p.desc) + '</p>' : '') +
         (p.stack && p.stack.length ? '<div class="chips small">' + p.stack.map(s => '<span>' + esc(s) + '</span>').join('') + '</div>' : '') +
+        (p.learned && p.learned.length ? '<div class="learned"><span class="learned-label">skills gained/</span><div class="chips small">' + p.learned.map(s => '<span>' + esc(s) + '</span>').join('') + '</div></div>' : '') +
         (p.href ? '<a class="repo" href="' + esc(p.href) + '" target="_blank" rel="noopener noreferrer">' + esc(p.hrefLabel || p.href) + ' →</a>' : '')));
     });
   }

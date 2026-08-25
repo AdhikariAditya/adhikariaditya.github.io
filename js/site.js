@@ -21,11 +21,17 @@
   img.alt = 'Aditya Adhikari';
   img.src = PROFILE.photo;
 
+  const learnedRow = (it) => (it.learned && it.learned.length
+    ? '<div class="learned"><span class="learned-label">skills gained/</span>' +
+      '<div class="chips small">' + it.learned.map(x => '<span>' + esc(x) + '</span>').join('') + '</div></div>'
+    : '');
+
   const timeline = (list, mount) => list.forEach(it => {
     mount.appendChild(el('div', 'card',
       '<div class="card-head"><h3>' + esc(it.title) + '</h3><span class="period">' + esc(it.period) + '</span></div>' +
       (it.org ? '<div class="org">' + esc(it.org) + '</div>' : '') +
-      (it.desc ? '<p>' + esc(it.desc) + '</p>' : '')));
+      (it.desc ? '<p>' + esc(it.desc) + '</p>' : '') +
+      learnedRow(it)));
   });
 
   timeline(onWeb(EDUCATION), $('education-list'));
@@ -51,6 +57,7 @@
     $('projects-list').appendChild(el('div', 'card',
       '<h3>' + esc(p.title) + '</h3>' +
       (p.desc ? '<p>' + esc(p.desc) + '</p>' : '') +
+      learnedRow(p) +
       (p.href ? '<a class="repo" href="' + esc(p.href) + '" target="_blank" rel="noopener noreferrer">' + esc(p.hrefLabel || p.href) + ' →</a>' : '')));
   });
 
