@@ -44,20 +44,20 @@ const CERTIFICATIONS = [
 ];
 
 const SKILLS = [
-  { label: "languages", items: ["Python", "C", "Bash", "Java"] },
-  { label: "tools",     items: ["Linux", "Wireshark", "Burp Suite", "Git", "Metasploit"] },
-  { label: "security",  items: ["Web exploitation", "Cryptography", "Penetration Testing"] },
+  { label: "languages", items: ["Python", "C", "Bash", "SQL", "PowerShell"] },
+  { label: "tools",     items: ["Linux", "Wireshark", "VirtualBox", "Git", "Metasploit"] },
+  { label: "defensive", items: ["Wazuh SIEM", "Sysmon", "Log Analysis", "Detection Engineering", "MITRE ATT&CK"] },
   { label: "spoken",    items: ["English", "Nepali", "Hindi", "German"] }
 ];
 
 const PROJECTS = [
-  { title: "Under Construction", desc: "Updates Coming Soon", href: "https://github.com/adhikariaditya", hrefLabel: "GitHub Soon" },
-  { title: "Under Construction", desc: "Updates Coming Soon", href: "https://github.com/adhikariaditya", hrefLabel: "GitHub Soon" },
+  { title: "SOC Home Lab - Wazuh SIEM", desc: "Wazuh SIEM for a Windows endpoint", href: "https://github.com/AdhikariAditya/SOC-Home-Lab", hrefLabel: "View GitHub" },
+  { title: "File Integrity Monitor", desc: "Tool to monitor any changes in files you have", href: "https://github.com/AdhikariAditya/FileIntegrityManager", hrefLabel: "View GitHub" },
   { title: "Under Construction", desc: "Updates Coming Soon", href: "https://github.com/adhikariaditya", hrefLabel: "GitHub Soon" }
 ];
 
 const BLOGS = [
-  { date: "16-10-2026", title: "CTF: Pickle Rick", tag: "ctf", slug: "pickle-rick" }
+  { date: "16-09-2026", title: "CTF: Pickle Rick", tag: "ctf", slug: "pickle-rick" }
 ];
 
 const CONTACT = [
