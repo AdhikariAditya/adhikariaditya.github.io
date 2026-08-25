@@ -68,7 +68,6 @@ const CONTACT = [
 
 const CONTACT_FORM = {
   endpoint: "https://formsubmit.co/ajax/adityaadhikari03@gmail.com",
-  fallback: "adityaadhikari03@gmail.com",
   subject:  "New message from adhikariaditya.github.io"
 };
 
