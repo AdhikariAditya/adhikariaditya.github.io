@@ -176,5 +176,4 @@ It also supports:
 - [ ] Get a better profile picture
 - [x] Replace the placeholder projects with real ones
 - [x] Add `assets/resume.pdf`
-- [ ] Point the project links at their own repos instead of the profile page
 - [ ] Add website analytics
