@@ -56,14 +56,14 @@ const PROJECTS = [
   {
     title: "SOC Home Lab - Wazuh SIEM",
     desc: "Wazuh SIEM for a Windows endpoint",
-    href: "https://github.com/adhikariaditya",
+    href: "https://github.com/AdhikariAditya/SOC-Home-Lab",
     hrefLabel: "View GitHub",
     learned: ["Wazuh SIEM", "Sysmon", "Log Analysis", "MITRE ATT&CK", "Windows internals"]
   },
   {
     title: "File Integrity Monitor",
     desc: "Tool to monitor any changes in files you have",
-    href: "https://github.com/adhikariaditya",
+    href: "https://github.com/AdhikariAditya/FileIntegrityManager",
     hrefLabel: "View GitHub",
     learned: ["Python", "hashlib", "pathlib", "argparse", "json"]
   },
