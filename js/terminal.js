@@ -50,6 +50,7 @@
     { cmd: 'mail', desc: 'write me a message — sent straight to my inbox' },
     { cmd: 'wget contact.sh', desc: 'LinkedIn, GitHub' },
     { cmd: 'curl download_resume.sh', desc: 'open my resume in a new tab' },
+    { cmd: 'theme', desc: 'toggle light/dark mode — or: theme light, theme dark' },
     { cmd: 'clear', desc: 'clear the screen' },
     { cmd: 'normal', desc: 'switch to the normal viewing experience' }
   ];
@@ -67,6 +68,7 @@
     [/^(wget|curl|sh|bash|\.\/)?\s*\.?\/?contact(\.sh)?$/, 'contact'],
     [/^mail$|^msg$|^message$|^(sh|bash|\.\/)?\s*\.?\/?message\.sh$/, 'mail'],
     [/^(wget|curl|sh|bash|\.\/)?\s*\.?\/?download_resume(\.sh)?$|^resume$/, 'resume'],
+    [/^theme(\s+(light|dark|toggle))?$|^light$|^dark$/, 'theme'],
     [/^clear$|^cls$/, 'clear'],
     [/^normal$|^gui$/, 'normal'],
     [/^ls$|^ls\s+-la?$|^ls\s+\.$/, 'ls'],
@@ -102,6 +104,14 @@
         '<a class="t-action" href="' + esc(PROFILE.resume) + '" target="_blank" rel="noopener">↗ open resume</a>';
       case 'ls': return '<div class="t-p">blogs/<br>projects/<br>skills.txt<br>contact.sh<br>message.sh<br>download_resume.sh<br>Aditya_Adhikari</div>';
       case 'pwd': return p('/home/aditya');
+      case 'theme': {
+        const arg = (raw.trim().toLowerCase().match(/light|dark|toggle/) || [])[0];
+        const now = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+        const next = arg === 'light' || arg === 'dark' ? arg : (now === 'light' ? 'dark' : 'light');
+        if (next === now) return p('theme: already ' + now + '.');
+        setTheme(next);
+        return p('theme: switched to ' + next + ' mode.');
+      }
       case 'sudo': return err('aditya is not in the sudoers file. This incident will be reported.');
       case 'exit': return p("There is no exit. Try 'normal' for the point-and-click experience.");
       default: return err('bash: ' + raw + ': command not found — type \'help\' for assistance');
@@ -272,6 +282,14 @@
     const typed = input.value.replace(/^\s+/, '');
     if (!typed) { write(helpTable(HELP_ROWS), ''); return; }
 
+    const themeM = typed.match(/^(theme\s+)(\S*)$/i);
+    if (themeM) {
+      const opts = ['light', 'dark'].filter(o => o.startsWith(themeM[2].toLowerCase()));
+      if (opts.length === 1) { input.value = themeM[1] + opts[0]; return; }
+      if (opts.length) write(helpTable([{ cmd: 'light', desc: 'light mode' }, { cmd: 'dark', desc: 'dark mode' }]), typed);
+      return;
+    }
+
     const pathM = typed.match(/^((?:cat|less|more|read)\s+)(\.?\/?blogs\/)(\S*)$/i);
     if (pathM) {
       const files = onTerm(BLOGS).filter(b => b.slug).map(b => b.slug + '.md');
@@ -288,9 +306,12 @@
 
     const hits = HELP_ROWS.map(r => r.cmd).filter(c => c.toLowerCase().startsWith(typed.toLowerCase()));
     if (!hits.length) return;
-    if (hits.length === 1) { input.value = hits[0] + ' '; return; }
+    const stopAtArg = (c) => { const i = c.indexOf('<'); return i > 0 ? c.slice(0, i) : c + ' '; };
+    if (hits.length === 1) { input.value = stopAtArg(hits[0]); return; }
     let prefix = hits[0];
     for (const h of hits) while (h.toLowerCase().indexOf(prefix.toLowerCase()) !== 0) prefix = prefix.slice(0, -1);
+    const cut = prefix.indexOf('<');
+    if (cut > 0) prefix = prefix.slice(0, cut);
     if (prefix.length > typed.length) { input.value = prefix; return; }
     write(helpTable(hits.map(c => HELP_ROWS.find(r => r.cmd === c))), typed);
   }

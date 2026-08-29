@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>(function(){try{var t=localStorage.getItem('aa-theme');if(!t)t=(window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="reading">
@@ -21,6 +22,7 @@
       <a href="projects.html">Projects</a>
       <a href="index.html#contact">Contact</a>
     </nav>
+    <button class="term-btn theme-btn" type="button" data-theme-toggle>light mode</button>
     <a class="term-btn" href="index.html">$ terminal</a>
   </header>
 
@@ -29,6 +31,7 @@
   </article>
 </div>
 
+<script src="js/theme.js"></script>
 <script src="js/content.js"></script>
 <script src="js/markdown.js"></script>
 <script src="js/post.js"></script>

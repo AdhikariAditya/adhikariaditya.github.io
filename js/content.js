@@ -40,8 +40,8 @@ const EXPERIENCE = [
 ];
 
 const CERTIFICATIONS = [
-  { title: "Pre Security (SEC0) Certificate", org: "TryHackMe", period: "2026-2029", desc: "Technical Understanding of Cybersecurity" },
-  { title: "Security 101 (SEC1)", org: "TryHackMe", period: "2026-2029", desc: "Foundations of Cybersecurity" },
+  { title: "Pre Security (SEC0) Certificate", org: "TryHackMe", period: "2026-2029", desc: "Basics of Cybersecurity" },
+  { title: "Security 101 (SEC1) Certificate", org: "TryHackme", period: "2026-2029", desc: "Foundations of Cybersecurity" },
   { title: "TBA", org: "TBA", period: "", desc: "TBA" }
 ];
 
@@ -56,16 +56,16 @@ const PROJECTS = [
   {
     title: "SOC Home Lab - Wazuh SIEM",
     desc: "Wazuh SIEM for a Windows endpoint",
-    href: "https://github.com/AdhikariAditya/SOC-Home-Lab",
+    href: "https://github.com/adhikariaditya",
     hrefLabel: "View GitHub",
     learned: ["Wazuh SIEM", "Sysmon", "Log Analysis", "MITRE ATT&CK", "Windows internals"]
   },
   {
     title: "File Integrity Monitor",
     desc: "Tool to monitor any changes in files you have",
-    href: "https://github.com/AdhikariAditya/FileIntegrityManager",
+    href: "https://github.com/adhikariaditya",
     hrefLabel: "View GitHub",
-    learned: ["Python", "hashlib", "pathlib", "argparse", "json", "sys"]
+    learned: ["Python", "hashlib", "pathlib", "argparse", "json"]
   },
   {
     title: "Under Construction",
