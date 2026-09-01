@@ -41,7 +41,7 @@ const EXPERIENCE = [
 
 const CERTIFICATIONS = [
   { title: "Pre Security (SEC0) Certificate", org: "TryHackMe", period: "2026-2029", desc: "Understanding of Cybersecurity" },
-  { title: "Cyber Security 101 (SEC1)", org: "TryHackMe", period: "2026-2029", desc: "Foundations of Cybersecurity" },
+  { title: "Cyber Security 101 (SEC1) Certificate", org: "TryHackMe", period: "2026-2029", desc: "Foundations of Cybersecurity" },
   { title: "TBA", org: "TBA", period: "", desc: "TBA" }
 ];
 
