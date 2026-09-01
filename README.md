@@ -160,7 +160,6 @@ grep "experience" Aditya_Adhikari
 mail
 wget contact.sh
 curl download_resume.sh
-theme
 clear
 normal
 ```
@@ -177,5 +176,5 @@ It also supports:
 - [ ] Get a better profile picture
 - [x] Replace the placeholder projects with real ones
 - [x] Add `assets/resume.pdf`
-- [x] Point the project links at their own repos instead of the profile page
+- [ ] Point the project links at their own repos instead of the profile page
 - [ ] Add website analytics

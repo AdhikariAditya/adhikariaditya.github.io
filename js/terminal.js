@@ -330,7 +330,12 @@
     }
     if (e.key === 'l' && e.ctrlKey) { e.preventDefault(); out.innerHTML = ''; }
   });
-  screen.addEventListener('click', () => input.focus());
+  const coarse = window.matchMedia && matchMedia('(pointer: coarse)').matches;
+  screen.addEventListener('click', (e) => {
+    if (coarse && e.target.closest('a,button')) return;
+    if (coarse && String(getSelection()).length) return;
+    input.focus();
+  });
 
   write(
     p('Welcome to my website') + p('') +
@@ -342,5 +347,6 @@
 
   let saved = null;
   try { saved = localStorage.getItem('aa-view-mode'); } catch (e) {}
-  setView(saved === 'normal' ? 'normal' : 'shell');
+  const smallScreen = window.matchMedia && matchMedia('(max-width: 640px)').matches;
+  setView(saved ? saved : (smallScreen ? 'normal' : 'shell'));
 })();

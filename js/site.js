@@ -106,7 +106,11 @@
     shell.hidden = mode !== 'shell';
     site.hidden = mode !== 'normal';
     try { localStorage.setItem('aa-view-mode', mode); } catch (e) {}
-    if (mode === 'shell') { const i = $('cmdline'); if (i) i.focus(); }
+    if (mode === 'shell') {
+      const i = $('cmdline');
+      const coarse = window.matchMedia && matchMedia('(pointer: coarse)').matches;
+      if (i && !coarse) i.focus();
+    }
     else window.scrollTo(0, 0);
   };
   $('to-normal').addEventListener('click', () => setView('normal'));
