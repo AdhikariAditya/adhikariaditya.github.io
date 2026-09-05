@@ -68,8 +68,8 @@ const PROJECTS = [
     learned: ["Python", "hashlib", "pathlib", "argparse", "json"]
   },
   {
-    title: "Under Construction",
-    desc: "Updates Coming Soon",
+    title: "Honeypot Project",
+    desc: "Custom Cowrie honeypot on a virtual machine",
     href: "https://github.com/adhikariaditya",
     hrefLabel: "GitHub Soon",
     learned: []
