@@ -33,6 +33,6 @@ But this is not to say these exams have no faults. The biggest gripe I had was w
 
 These cons are not here to dissuade you from taking the exams or painting them in a bad light. My blog is here to give readers an insight into what I faced while doing these examinations. In my opinion, ultimately, for beginner courses these do a wonderful job of introducing you into the world of cybersecurity. They are short, sweet, and simple. For any future beginners trying to get into cybersecurity, I do recommend both of them.
 
-![THM SEC0 Certificate](./images/SEC%200%20and%20SEC%201/SEC0.pdf)
+![THM SEC0 Certificate](./images/SEC%200%20and%20SEC%201/SEC0.png)
 
-![THM SEC1 Certificate](./images/SEC%200%20and%20SEC%201/SEC1.pdf)
+![THM SEC1 Certificate](./images/SEC%200%20and%20SEC%201/SEC1.png)
