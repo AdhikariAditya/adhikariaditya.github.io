@@ -1,3 +1,9 @@
+---
+title: "SEC0 and SEC0"
+date: "06-0902926"
+tag: "blog"
+---
+
 # Pre Security (SEC0) and Cyber Security 101 (SEC1)
 
 Pre Security (SEC0) and Cyber Security 101 (SEC1) are the beginner certifications on TryHackMe's website. Going to any specialization within TryHackMe (if you start from the beginning like I did) needs you to go through these certifications. They are simple and the only real practice you need is the Pre Security and Cyber Security 101 paths that precede them. I just wanna break down these certifications and everything good or bad about them in a simple blog.
