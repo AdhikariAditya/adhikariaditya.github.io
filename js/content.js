@@ -1,7 +1,7 @@
 const PROFILE = {
   name: "Hi, I'm Aditya.",
   tagline: "Trying my best (to survive)",
-  bio: "Current sophomore at South Asian University with a keen interest in cybersecurity. Follow me on my journey.",
+  bio: "Current junior at South Asian University with a keen interest in cybersecurity. Follow me on my journey.",
   photo: "assets/profile.jpg", 
   resume: "assets/resume.pdf",     
   promptHost: "aditya@adhikari"
