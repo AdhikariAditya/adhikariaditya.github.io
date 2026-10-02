@@ -47,12 +47,19 @@ const CERTIFICATIONS = [
 
 const SKILLS = [
   { label: "languages", items: ["Python", "C", "Bash", "SQL", "PowerShell"] },
-  { label: "tools",     items: ["Linux", "Wireshark", "VirtualBox", "Git", "Metasploit", "Cowrie"] },
-  { label: "defensive", items: ["Wazuh SIEM", "Sysmon", "Log Analysis", "Detection Engineering", "MITRE ATT&CK", "Honeypot"] },
+  { label: "tools",     items: ["Linux", "Wireshark", "VirtualBox", "Git", "Cowrie"] },
+  { label: "defensive", items: ["Wazuh SIEM", "Sysmon", "Log Analysis", "Detection Engineering", "MITRE ATT&CK", "Honeypot", "Sigma"] },
   { label: "spoken",    items: ["English", "Nepali", "Hindi", "German"] }
 ];
 
 const PROJECTS = [
+    {
+    title: "Honeypot Project",
+    desc: "Custom Cowrie honeypot with 7 Wazuh/Sigma rules detecting bots vs. human attackers",
+    href: "https://github.com/AdhikariAditya/Cowrie-Honeypot",
+    hrefLabel: "View GitHub",
+    learned: ["Cowrie", "Detection Engineering", "Oracle Cloud", "VirusTotal", "Sigma Rules", "Wazuh SIEM"]
+  },
   {
     title: "SOC Home Lab - Wazuh SIEM",
     desc: "Wazuh SIEM for a Windows endpoint",
@@ -66,13 +73,6 @@ const PROJECTS = [
     href: "https://github.com/AdhikariAditya/FileIntegrityManager",
     hrefLabel: "View GitHub",
     learned: ["Python", "hashlib", "pathlib", "argparse", "json"]
-  },
-  {
-    title: "Honeypot Project",
-    desc: "Custom Cowrie honeypot on a virtual machine",
-    href: "https://github.com/AdhikariAditya/Cowrie-Honeypot",
-    hrefLabel: "View GitHub",
-    learned: ["Cowrie", "MITRE ATT&CK", "Oracle Cloud", "VirusTotal", "SSH", "Wazuh SIEM"]
   }
 ];
 
